@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: rilkedraganmyapp 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: rilkedraganmyapp
+  template:
+    metadata:
+      labels:
+        app: rilkedraganmyapp 
+    spec:
+      containers:
+        - name: rilkedraganmyapp 
+          image: rilkecontainerregistry.azurecr.io/rilkedraganmyapp
+          ports:
+          - containerPort: 8080
